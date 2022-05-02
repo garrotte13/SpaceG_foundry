@@ -9,7 +9,7 @@ data:extend({
     icon = "__bzfoundry__/graphics/icons/foundry.png",
     icon_size = 64,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 0.2, result = "electric-foundry"},
+    minable = {mining_time = 0.5, result = "electric-foundry"},
     max_health = 300,
     corpse = "medium-small-remnants",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -22,7 +22,8 @@ data:extend({
       {
         type = "fire",
         percent = 100
-      }
+      },
+      {type = "impact", percent = 40},
     },
     collision_box = {{-1.7, -1.7}, {1.7, 1.7}},
     selection_box = {{-2, -2}, {2, 2}},

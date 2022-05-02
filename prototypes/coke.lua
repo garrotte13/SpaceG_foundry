@@ -14,8 +14,9 @@ data:extend({
       {size = 128, filename = "__bzfoundry__/graphics/icons/coke-3.png", scale = 0.125},
     },
     fuel_category = "chemical",
-    fuel_value = "10MJ",
-    fuel_acceleration_multiplier = 1.2,
+    fuel_value = "8MJ",
+    fuel_emissions_multiplier = settings.startup["rampant-industry--enableFuelEmissions"] and settings.startup["rampant-industry--enableFuelEmissions"].value and 2 or 1,
+    fuel_acceleration_multiplier = 1.1,
     fuel_top_speed_multiplier = 1,
     subgroup = "raw-material",
     order = "c[coke]",
@@ -24,13 +25,22 @@ data:extend({
   {
     type = "recipe",
     name = "coke",
-    result = "coke",
-    category = "founding",
+    icon = "__bzfoundry__/graphics/icons/coke-icon.png",
+    icon_size = 128,
+    results =
+    {
+      {name="coke", amount=1},
+    },
+    category = "coking",
     ingredients = {{"coal", 2}},
+    subgroup = "raw-material",
+    order = "c[coke]",
     energy_required = 3.2,
     enabled=false,
   },
 })
+if mods["Warmonger"] then table.insert( data.raw.recipe["coke"].results, {name="wm-bio-remains", amount=1, probability=.05}) end
+
 elseif util.me.carbon() == "solid-fuel" then
 data:extend({
   {

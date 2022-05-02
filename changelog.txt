@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+Date: 2022-05-02
+  Changes:
+    - Misprint in "industrial-furnace" corrected.
+    - Iron vanilla amount returned in Steel recipe for SpaceG playthrough. Player must always obtain iron in huge amounts for bullets and steel unless big breaker mod is used.
+    - Recipe category for coking added.
+    - Fixing balance for coke chemical fuel properties (it mustn't give more energy per source coal mass, but will give less pollution comparing to coal).
+    - Added coking plant chemical and electrical (both 3x3). Game chain: 2 electric foundries need 1 coking-plant + 4 iron producing steel/electric furnaces.
+    - Replaced 4x4 size chemical foundry with twice slower one (graphics 3x3 from APM mod). 4x4 simply doesn't work out in early game balance.
+    - Coke demand for Silicon recipe is halved to avoid making Coal most important game raw mineral. Iron must keep it's first place.
+    - Made electrical foundry available before processing unit and production tech packs are produced -> moving electrical foundry one era earlier.
+    - Added bio-residue probability in Coke co-products for Warmonger mod as a bit of reality in early game long before sulphur (real life co-product) is unlocked.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2022-02-22
   Features:
