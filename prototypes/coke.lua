@@ -14,7 +14,7 @@ data:extend({
       {size = 128, filename = "__bzfoundry__/graphics/icons/coke-3.png", scale = 0.125},
     },
     fuel_category = "chemical",
-    fuel_value = "8MJ",
+    fuel_value = "7.95MJ",
     fuel_emissions_multiplier = settings.startup["rampant-industry--enableFuelEmissions"] and settings.startup["rampant-industry--enableFuelEmissions"].value and 2 or 1,
     fuel_acceleration_multiplier = 1.1,
     fuel_top_speed_multiplier = 1,

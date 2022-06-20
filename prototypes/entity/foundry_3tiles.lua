@@ -153,8 +153,7 @@ data:extend({
               scale = 0.5
             }
           },
-        },
-        {
+
             {
               filename = "__bzfoundry__/graphics/entity/spaceG/foundry_chem/puddling_furnace_shadow.png",
               priority = "high",
@@ -179,7 +178,7 @@ data:extend({
                 scale = 0.5
               }
             },
-          },
+        },
       },
       idle_animation =
       {
