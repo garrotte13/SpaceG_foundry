@@ -15,7 +15,7 @@ data:extend({
     },
     fuel_category = "chemical",
     fuel_value = "7.95MJ",
-    fuel_emissions_multiplier = settings.startup["rampant-industry--enableFuelEmissions"] and settings.startup["rampant-industry--enableFuelEmissions"].value and 2 or 1,
+    fuel_emissions_multiplier = settings.startup["rampant-industry--enableFuelEmissions"] and settings.startup["rampant-industry--enableFuelEmissions"].value and 1.9 or 1,
     fuel_acceleration_multiplier = 1.1,
     fuel_top_speed_multiplier = 1,
     subgroup = "raw-material",
