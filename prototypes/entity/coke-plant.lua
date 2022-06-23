@@ -71,12 +71,6 @@ data:extend({
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     allow_copy_paste = true,
-    module_specification =
-    {
-      module_slots = 3,
-      module_info_icon_shift = {0, 0.8}
-    },
-    allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     energy_usage = "180KW",
     energy_source =
     {
