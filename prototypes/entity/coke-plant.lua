@@ -52,7 +52,7 @@ data:extend({
     resistances = {{type = "impact", percent = 40},{type = "fire",percent = 90}},
     max_health = 300,
     crafting_categories = {"coking"},
-    crafting_speed = 2,
+    crafting_speed = 1,
     source_inventory_size = 1,
     show_recipe_icon = false,
     fixed_recipe = "coke",
@@ -71,14 +71,14 @@ data:extend({
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     allow_copy_paste = true,
-    energy_usage = "180KW",
+    energy_usage = "120KW",
     energy_source =
     {
       type = "burner",
       fuel_category = "chemical",
       effectivity = 1,
       fuel_inventory_size = 1,
-      emissions_per_minute = 9,
+      emissions_per_minute = 5,
       smoke = smoke_burner
     },
     animation =
