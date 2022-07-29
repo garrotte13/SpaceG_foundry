@@ -220,7 +220,7 @@ data:extend({
   close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.43 },
   working_sound =
   {
-    sound = { filename = "__base__/sound/electric-furnace.ogg", volume = 0.8}
+    sound = { filename = "__base__/sound/electric-furnace.ogg", volume = 0.5}
   },
   collision_box = {{-1.9, -1.9}, {1.9, 1.9}},
   selection_box = {{-2.0, -2.0}, {2.0, 2.0}},
