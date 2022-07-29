@@ -222,8 +222,8 @@ data:extend({
   {
     sound = { filename = "__base__/sound/electric-furnace.ogg", volume = 0.8}
   },
-  collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-  selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+  collision_box = {{-1.9, -1.9}, {1.9, 1.9}},
+  selection_box = {{-2.0, -2.0}, {2.0, 2.0}},
   allow_copy_paste = true,
   energy_usage = "360kW",
   drain = "12kW",
@@ -266,8 +266,9 @@ data:extend({
           width = 90,
           height = 188,
           animation_speed = 0.5,
-          shift = util.by_pixel(-2, -40),
-          scale = 0.5
+          shift = util.by_pixel(-5, -97),
+          --shift = {0.74, -0.75},
+          scale = 2.2 / 3
         }
       }
     }
@@ -283,7 +284,8 @@ data:extend({
         width = 160,
         height = 128,
         animation_speed = 0.133333335,
-
+        --scale = 1.0
+        scale = 1.3334,
         frame_count = 16,
         shift = {0.4375, -0.28125},
         hr_version =
@@ -296,8 +298,9 @@ data:extend({
           animation_speed = 0.133333335,
 
           frame_count = 16,
-          shift = {0.4375, -0.28125},
-          scale = 0.5
+          shift = {0.74, -0.75},
+          scale = 2.2 / 3
+--          scale = 0.5
         }
       },
   
@@ -310,7 +313,7 @@ data:extend({
         width = 160,
         height = 128,
         animation_speed = 0.133333335,
-        shift = {0.4375, -0.28125},
+        shift = {0.74, -0.75},
         frame_count = 16,
         hr_version =
         {
@@ -323,8 +326,8 @@ data:extend({
           animation_speed = 0.133333335,
           apply_projection = false,
           frame_count = 16,
-          shift = {0.4375, -0.28125},
-          scale = 0.5
+          shift = {0.74, -0.75},
+          scale = 2.2 / 3
         }
       }
     
@@ -354,8 +357,8 @@ idle_animation =
               animation_speed = 0.133333335,
   
               frame_count = 16,
-              shift = {0.4375, -0.28125},
-              scale = 0.5
+              shift = {0.74, -0.75},
+              scale = 2.2 / 3
             }
           },
           {
@@ -379,8 +382,9 @@ idle_animation =
                 animation_speed = 0.133333335,
                 apply_projection = false,
                 frame_count = 16,
-                shift = {0.4375, -0.28125},
-                scale = 0.5
+                shift = {0.74, -0.75},
+                --scale = 0.5
+                scale = 2.2 / 3
               }
             }
   }
