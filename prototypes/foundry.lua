@@ -137,7 +137,7 @@ data:extend({
     name = "electric-foundry",
     icon_size = 128,
     icon = "__bzfoundry__/graphics/entity/spaceG/foundry_el2/apm_steelworks-2.png",
-    prerequisites = {"advanced-material-processing-2"},
+    prerequisites = {"advanced-material-processing-2", "concrete"},
     effects = {
       {type = "unlock-recipe", recipe = "electric-foundry"},
       util.me.carbonrecipe() == "coke" and mods["SpaceG"] and {type = "unlock-recipe", recipe = "coking-plant-electric"},

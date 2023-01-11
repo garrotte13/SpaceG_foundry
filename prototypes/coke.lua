@@ -39,9 +39,7 @@ data:extend({
     enabled=false,
   },
 })
---if mods["Warmonger"] then
   table.insert( data.raw.recipe["coke"].results, {name="sulfur", amount=1, probability=.015})
---end
 
 elseif util.me.carbon() == "solid-fuel" then
 data:extend({
