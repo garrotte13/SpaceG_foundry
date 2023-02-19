@@ -1,7 +1,8 @@
 local util = require("data-util")
 
 require("prototypes/categories")
-
+require("prototypes/entity/crusher")
+if mods["bztungsten"] then require("prototypes/firetorchparts") end
 if util.me.enable() then
   if util.me.carbon() == "coke" and mods["SpaceG"] then require("prototypes/entity/coke-plant") end
   require("prototypes/coke")

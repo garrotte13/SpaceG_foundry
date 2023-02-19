@@ -45,6 +45,31 @@ data:extend({
     order = "foundry",
   },
 
+
+
+{
+  type = "technology",
+  name = "crusher",
+  icon = "__bzfoundry__/graphics/entity/apm_crusher_machine_2.png",
+  icon_size = 128,
+  icon_mipmaps = 4,
+  effects = {
+    {
+      type = "unlock-recipe",
+      recipe = "y_crusher",
+    },
+  },
+  prerequisites = { "steel-axe", "advanced-material-processing" },
+  unit = {
+    count = 150,
+    ingredients = {
+      {"automation-science-pack", 1},
+      {"logistic-science-pack", 1},
+    },
+    time = 30,
+  },
+}
+
 })
 
 if util.me.carbon() == "coke" and mods["SpaceG"] then
@@ -238,4 +263,49 @@ if util.me.founding_plates() then
       }
     })
   end
+end
+
+if (mods.bzsilicon and 1 or 0) + (mods.bzzirconium and 1 or 0) +
+ (mods.bztungsten and 1 or 0) + (mods.bzlead and 1 or 0) > 2 then -- if 3+ bz resource mods added then player needs a bonus for research
+  data:extend({
+    {
+      type = "technology",
+      name = "toolbelt-extended",
+      icon_size = 256,
+      icon_mipmaps = 4,
+      icons = {
+        {
+          icon = "__base__/graphics/technology/toolbelt.png",
+          icon_size = 256,
+          icon_mipmaps = 4
+        },
+        {
+          icon = "__core__/graphics/icons/technology/constants/constant-capacity.png",
+          icon_size = 128,
+          icon_mipmaps = 3,
+          shift = {100, 100}
+        }
+      },
+      prerequisites = {"toolbelt", "power-armor" },
+            effects =
+          {
+            {
+              type = "character-inventory-slots-bonus",
+              modifier = 10
+            }
+          },
+          unit =
+          {
+            count = 400,
+            ingredients =
+            {
+              {"automation-science-pack", 1},
+              {"logistic-science-pack", 1},
+              {"chemical-science-pack", 1},
+            },
+            time = 30
+          },
+      --order = "c-k-m"
+    },
+  })
 end
