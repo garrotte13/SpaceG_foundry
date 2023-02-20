@@ -369,6 +369,11 @@ if mods["bzlead"] then
   end
   table.insert(c_recipe.ingredients, {type="item", name="copper-plate", amount=1})
 
+  data.raw.recipe["lead-plate"].normal.results = {
+    {type="item", name = "lead-plate", amount=2, probability=0.9},
+    {type="item", name = "copper-ore", amount=1, probability=0.2},
+  }
+
   util.multiply_recipe("pipe", 2)
   c_recipe = data.raw.recipe["pipe"].normal.ingredients
   for i, component in pairs(c_recipe) do
