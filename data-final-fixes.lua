@@ -238,6 +238,24 @@ if mods["bzsilicon"] then
   table.insert(data.raw.recipe["substation"].ingredients, {type="item", name="cermet", amount=5})
   table.insert(data.raw.technology["electric-energy-distribution-2"].prerequisites, "cermet")
 
+  if settings.startup["bzsilicon-more-intermediates"].value == "yes" or settings.startup["bzsilicon-more-intermediates"].value == "more" then
+    -- ***** fixing solar cells balance
+    util.set_ingredient("solar-panel-equipment", "solar-cell", 5)
+    util.set_ingredient("solar-panel", "solar-cell", 10)
+
+  -- ***** fixing wafers balance (removing hard earned sulphuric acid)
+    util.set_ingredient("advanced-circuit", "electronic-circuit", 6) -- put back 2 green circuits per red one
+    c_recipe = data.raw.recipe["silicon-wafer"].ingredients
+    for i, component in pairs(c_recipe) do
+      for _, value in pairs(component) do
+        if value == "sulfuric-acid" then
+          c_recipe[i] = {type="fluid", name="water", amount=50}    -- replace expensive strong acid by simple water
+          break
+        end
+      end
+    end
+  end
+
 end
 
 if mods["bztitanium"] then
