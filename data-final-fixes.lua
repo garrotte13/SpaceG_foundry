@@ -43,28 +43,11 @@ if mods["bztungsten"] then
   table.insert(c_recipe.ingredients, {type="item", name="copper-plate", amount=4})
 -- End fixing piercing bullets ---
 
---[[
-c_recipe = data.raw.recipe["artillery-shell"] --shells don't have rocket engines. Ok-ok, let them be, because M142 shells use those engines to burn Putler.
-  for i, component in pairs(c_recipe.ingredients) do
-    for _, value in pairs(component) do
-      if value == "rocket-engine-nozzle" then
-        table.remove(c_recipe.ingredients, i)
-        break
-      end
-    end
+  if settings.startup["bzsilicon-more-intermediates"] and settings.startup["bzsilicon-more-intermediates"].value == "more" then
+    -- don't change anything
+  else
+    util.replace_some_ingredient("laser-turret", "steel-plate", 4, "tungsten-plate", 6)
   end
-]]
-
-  c_recipe = data.raw.recipe["laser-turret"]
-  for i, component in pairs(c_recipe.ingredients) do
-   for _, value in pairs(component) do
-    if value == "steel-plate" then
-     c_recipe.ingredients[i] = {type="item", name="steel-plate", amount=16}
-     break
-    end
-   end
-  end
-  table.insert(c_recipe.ingredients, {type="item", name="tungsten-plate", amount=12})
 
 --[[ ATTEMPT TO SHORT COMPONENTS LIST OF midgame assemblers didn't look fun, but Electric Furnace recipe is really horrible
   c_recipe = data.raw.recipe["electric-furnace"]
@@ -256,6 +239,11 @@ if mods["bzsilicon"] then
     end
   end
 
+  if settings.startup["bzsilicon-more-intermediates"].value == "more" then
+    util.add_ingredient("advanced-tank-vehicle-rampant-arsenal", "gyro", 2)
+    util.add_ingredient("advanced-car-vehicle-rampant-arsenal", "gyro", 2)
+    util.add_ingredient("nuclear-train-vehicle-rampant-arsenal", "gyro", 2)
+  end
 end
 
 if mods["bztitanium"] then
