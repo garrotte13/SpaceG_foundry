@@ -410,7 +410,6 @@ if mods["bzlead"] then
      end
    end
    table.insert(data.raw.recipe["nuclear-fuel-reprocessing"].results, {"lead-plate", 1})
-   table.insert(data.raw.recipe["uranium-processing"].results, {name = "lead-ore", amount=2, probability=.05})
    
 
 
