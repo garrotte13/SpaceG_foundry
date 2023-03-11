@@ -243,6 +243,19 @@ if mods["bzsilicon"] then
     util.add_ingredient("advanced-tank-vehicle-rampant-arsenal", "gyro", 2)
     util.add_ingredient("advanced-car-vehicle-rampant-arsenal", "gyro", 2)
     util.add_ingredient("nuclear-train-vehicle-rampant-arsenal", "gyro", 2)
+
+    c_recipe = data.raw.recipe["flying-robot-frame"].ingredients
+    for i, component in pairs(c_recipe) do
+      for _, value in pairs(component) do
+       if value == "gyro" then
+        table.remove(c_recipe, i)
+        break
+       end
+      end
+     end
+     util.add_ingredient("construction-robot", "gyro", 1)
+     util.add_ingredient("logistic-robot", "gyro", 1)
+
   end
 end
 
