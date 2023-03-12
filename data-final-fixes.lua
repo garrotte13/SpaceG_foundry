@@ -214,12 +214,14 @@ if mods["bzsilicon"] then
   data.raw.recipe["stone-brick"].ingredients = {{type="item", name="silica", amount=5}}
   table.insert(data.raw.recipe["red-wire"].ingredients, {type="item", name="electronic-circuit", amount=1})
   table.insert(data.raw.recipe["green-wire"].ingredients, {type="item", name="electronic-circuit", amount=1})
-  table.insert(data.raw.recipe["low-density-structure"].normal.ingredients, {type="item", name="copper-plate", amount=12})
+  if mods["bzzirconium"] then table.insert(data.raw.recipe["low-density-structure"].normal.ingredients, {type="item", name="copper-plate", amount=12}) end
 
   table.insert(data.raw.recipe["repair-pack"].ingredients, {type="item", name="silica", amount=3})
 
-  table.insert(data.raw.recipe["substation"].ingredients, {type="item", name="cermet", amount=5})
-  table.insert(data.raw.technology["electric-energy-distribution-2"].prerequisites, "cermet")
+  if data.raw.recipe["cermet"] then
+    table.insert(data.raw.recipe["substation"].ingredients, {type="item", name="cermet", amount=5})
+    table.insert(data.raw.technology["electric-energy-distribution-2"].prerequisites, "cermet")
+  end
 
   if settings.startup["bzsilicon-more-intermediates"].value == "yes" or settings.startup["bzsilicon-more-intermediates"].value == "more" then
     -- ***** fixing solar cells balance
@@ -269,12 +271,14 @@ if mods["bztitanium"] then
   end
  end
  c_recipe = data.raw.recipe["cermet"]
- for i, component in pairs(c_recipe.ingredients) do
-  for _, value in pairs(component) do
-   if value == "titanium-plate" then
-    table.remove(c_recipe.ingredients, i)
-    break
-   end
+ if c_recipe then
+  for i, component in pairs(c_recipe.ingredients) do
+    for _, value in pairs(component) do
+      if value == "titanium-plate" then
+        table.remove(c_recipe.ingredients, i)
+        break
+      end
+    end
   end
  end
 
@@ -422,7 +426,7 @@ if mods["bzlead"] then
       end
      end
    end
-   table.insert(data.raw.recipe["nuclear-fuel-reprocessing"].results, {"lead-plate", 1})
+   --table.insert(data.raw.recipe["nuclear-fuel-reprocessing"].results, {"lead-plate", 1})
    
 
 
