@@ -113,6 +113,7 @@ if mods["bztungsten"] then
 
      -- ***** Changing Recipe for Advanced FlameThrower Turret - better be DIVIDED into TWO parts - tungsten-dependent and general part
      c_recipe = data.raw.recipe["suppression-cannon-item-rampant-arsenal"]
+     if c_recipe then
      c_recipe.category = "advanced-crafting"
      for i, component in pairs(c_recipe.normal.ingredients) do
       for _, value in pairs(component) do
@@ -123,6 +124,7 @@ if mods["bztungsten"] then
        end
       end
      end
+    end
      -- ***** End of Advanced FlameThrower Turret change.
 
      if mods["bzzirconium"] then     -- ***** Changing Recipes for Electric and Steel Furnaces, Zirconium processing *****
@@ -346,15 +348,18 @@ if mods["bzzirconium"] then
   }
 
   c_recipe = data.raw.recipe["repair-capsule-rampant-arsenal"]
-  for i, component in pairs(c_recipe.normal.ingredients) do
-   for _, value in pairs(component) do
-    if value == "steel-plate" then
-     c_recipe.normal.ingredients[i] = {type="item", name="zirconia", amount=5}
-     break
-    end
-   end
+  if c_recipe then
+    for i, component in pairs(c_recipe.normal.ingredients) do
+      for _, value in pairs(component) do
+        if value == "steel-plate" then
+        c_recipe.normal.ingredients[i] = {type="item", name="zirconia", amount=5}
+        break
+        end
+      end
+      end
   end
   c_recipe = data.raw.recipe["gun-item-rampant-arsenal"]
+  if c_recipe then
   for i, component in pairs(c_recipe.normal.ingredients) do
    for _, value in pairs(component) do
     if value == "steel-plate" then
@@ -364,17 +369,20 @@ if mods["bzzirconium"] then
    end
   end
   table.insert(c_recipe.normal.ingredients, {type="item", name="zirconium-plate", amount=10})
+end
 
   c_recipe = data.raw.recipe["advanced-beam-item-rampant-arsenal"]
-  for i, component in pairs(c_recipe.normal.ingredients) do
-    for _, value in pairs(component) do
-     if value == "steel-plate" then
-      c_recipe.normal.ingredients[i] = {type="item", name="titanium-plate", amount=10}
-      break
-     end
-    end
+  if c_recipe then
+      for i, component in pairs(c_recipe.normal.ingredients) do
+        for _, value in pairs(component) do
+        if value == "steel-plate" then
+          c_recipe.normal.ingredients[i] = {type="item", name="titanium-plate", amount=10}
+          break
+        end
+        end
+      end
+      table.insert(c_recipe.normal.ingredients, {type="item", name="zirconium-plate", amount=10})
   end
-  table.insert(c_recipe.normal.ingredients, {type="item", name="zirconium-plate", amount=10})
 
   if mods["bztungsten"] then table.insert(data.raw.recipe["fire-torch-parts"].ingredients, {type="item", name="zirconia", amount=20}) end
 
